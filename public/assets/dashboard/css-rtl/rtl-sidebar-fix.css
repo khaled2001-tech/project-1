@@ -1,0 +1,52 @@
+/* ===== Fix Right Sidebar (Notification Panel) ===== */
+
+/* خليه يطلع من اليمين */
+.sidebar.sidebar-left {
+    right: 0 !important;
+    left: auto !important;
+    transform: translateX(100%);
+}
+
+/* لما يفتح */
+.sidebar.sidebar-left.open,
+.sidebar.sidebar-left.active {
+    transform: translateX(0);
+}
+
+/* Animation direction fix */
+.sidebar-animate {
+    transition: transform 0.3s ease-in-out;
+}
+
+/* داخلياً: عكس المسافات */
+.sidebar .mr-3 {
+    margin-right: 0 !important;
+    margin-left: 1rem !important;
+}
+
+.sidebar .ml-3 {
+    margin-left: 0 !important;
+    margin-right: 1rem !important;
+}
+
+.sidebar .ml-2 {
+    margin-left: 0 !important;
+    margin-right: 0.5rem !important;
+}
+
+.sidebar .mr-auto {
+    margin-right: 0 !important;
+    margin-left: auto !important;
+}
+
+/* اتجاه النص */
+.sidebar {
+    direction: rtl;
+    text-align: right;
+}
+
+/* icons */
+.sidebar i {
+    margin-left: 5px;
+    margin-right: 0;
+}

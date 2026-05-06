@@ -1,0 +1,132 @@
+/* =========================================
+   GLOBAL DIRECTION FIX (RTL → LTR)
+========================================= */
+html,
+body {
+    direction: ltr !important;
+    text-align: left !important;
+}
+
+/* =========================================
+   SIDEBAR POSITION (Right → Left)
+   Keep vendor toggle behavior intact.
+========================================= */
+.app-sidebar {
+    left: 0 !important;
+    right: auto !important;
+}
+
+.main-content {
+    margin-right: 0 !important;
+    margin-left: 240px !important;
+}
+
+@media (max-width: 767px) {
+    .main-content {
+        margin-left: 0 !important;
+    }
+}
+
+/* =========================================
+   HEADER / NAVBAR
+========================================= */
+.main-header {
+    direction: ltr !important;
+}
+
+.main-header .ml-auto {
+    margin-left: auto !important;
+    margin-right: 0 !important;
+}
+
+/* =========================================
+   TEXT & ALIGNMENTS
+========================================= */
+.text-right {
+    text-align: left !important;
+}
+
+.text-left {
+    text-align: left !important;
+}
+
+/* =========================================
+   FLOAT FIXES
+========================================= */
+.float-right {
+    float: left !important;
+}
+
+.float-left {
+    float: left !important;
+}
+
+/* =========================================
+   ICONS & SIDEBAR ITEMS
+========================================= */
+.side-menu__icon {
+    margin-right: 12px !important;
+    margin-left: 0 !important;
+}
+
+.side-menu__label {
+    text-align: left !important;
+}
+
+.app-sidebar__toggle {
+    right: auto !important;
+}
+
+/* =========================================
+   DROPDOWNS
+========================================= */
+.dropdown-menu {
+    text-align: left !important;
+}
+
+/* =========================================
+   FORMS
+========================================= */
+.form-control {
+    text-align: left !important;
+}
+
+/* =========================================
+   TABLES
+========================================= */
+table {
+    direction: ltr !important;
+}
+
+th,
+td {
+    text-align: left !important;
+}
+
+/* =========================================
+   BOOTSTRAP FIXES
+========================================= */
+.me-auto {
+    margin-right: auto !important;
+    margin-left: 0 !important;
+}
+
+.ms-auto {
+    margin-left: auto !important;
+}
+
+/* =========================================
+   BREADCRUMB / CARDS
+========================================= */
+.breadcrumb,
+.card {
+    direction: ltr !important;
+    text-align: left !important;
+}
+
+/* =========================================
+   SAFETY
+========================================= */
+body {
+    overflow-x: hidden;
+}

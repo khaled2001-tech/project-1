@@ -1,0 +1,119 @@
+@extends('welcome.layout')
+
+@section('title', 'Cental - Contact Us')
+
+@section('content')
+    <!-- Header / Breadcrumb Start -->
+    <div class="container-fluid bg-breadcrumb mb-5">
+        <div class="container text-center py-5" style="max-width: 900px;">
+            <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Contact Us</h4>
+            <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
+                <li class="breadcrumb-item"><a href="{{ route('welcome.index') }}">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                <li class="breadcrumb-item active text-primary">Contact</li>
+            </ol>
+        </div>
+    </div>
+    <!-- Header End -->
+
+    <!-- Contact Start -->
+    <div class="container-fluid contact py-5">
+        <div class="container">
+            <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px;">
+                <h1 class="display-5 text-capitalize text-primary mb-3">Contact Us</h1>
+                <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut amet nemo expedita asperiores commodi accusantium at cum harum, excepturi, quia tempora cupiditate!</p>
+            </div>
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="bg-secondary p-5 rounded">
+                        <h5 class="text-white lh-base mb-4">Send us a message and we'll get back to you as soon as possible.</h5>
+                       <form action="{{ route('welcome.contact.store') }}" method="POST">
+    @csrf
+    <div class="row g-4">
+
+        <div class="col-lg-12 col-xl-6">
+            <div class="form-floating">
+                <input type="text"
+                       class="form-control @error('name') is-invalid @enderror"
+                       id="name"
+                       name="name"
+                       placeholder="Your Name"
+                       value="{{ old('name', auth()->user()->name) }}"
+                       required>
+                <label for="name">Your Name</label>
+                @error('name')
+                    <span class="invalid-feedback">{{ $message }}</span>
+                @enderror
+            </div>
+        </div>
+
+        <div class="col-lg-12 col-xl-6">
+            <div class="form-floating">
+                <input type="email"
+                       class="form-control @error('email') is-invalid @enderror"
+                       id="email"
+                       name="email"
+                       placeholder="Your Email"
+                       value="{{ old('email', auth()->user()->email) }}"
+                       required>
+                <label for="email">Your Email</label>
+                @error('email')
+                    <span class="invalid-feedback">{{ $message }}</span>
+                @enderror
+            </div>
+        </div>
+
+        <div class="col-12">
+            <div class="form-floating">
+                <input type="text"
+                       class="form-control @error('phone') is-invalid @enderror"
+                       id="phone"
+                       name="phone"
+                       placeholder="Your Phone"
+                       value="{{ old('phone') }}"
+                       required>
+                <label for="phone">Phone</label>
+                @error('phone')
+                    <span class="invalid-feedback">{{ $message }}</span>
+                @enderror
+            </div>
+        </div>
+
+        <div class="col-12">
+            <div class="form-floating">
+                <textarea class="form-control @error('message') is-invalid @enderror"
+                          placeholder="Leave a message here"
+                          id="message"
+                          name="message"
+                          style="height: 160px">{{ old('message') }}</textarea>
+                <label for="message">Message</label>
+                @error('message')
+                    <span class="invalid-feedback">{{ $message }}</span>
+                @enderror
+            </div>
+        </div>
+
+        <div class="col-12">
+            <button type="submit" class="btn btn-light w-100 py-3">Send Message</button>
+        </div>
+
+    </div>
+</form>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="rounded">
+                        <iframe class="rounded w-100"
+                            style="height: 580px;"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387191.33750346623!2d-73.97968099999999!3d40.6974881!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sbd!4v1694259649153!5m2!1sen!2sbd"
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact End -->
+
+@endsection
